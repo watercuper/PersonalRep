@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#b1").click(function(){
+			$("#p1").show();
+		});
+		$("#b2").click(function(){
+			$("#p1").hide();
+		});
+		$("#b3").click(function(){
+			$("#d1").fadeOut();
+		});
+		$("#b4").click(function(){
+			$("#d1").fadeIn();
+		});
+		$("#b5").click(function(){
+			//$("#d1").fadeToggle("slow");
+			$("#d1").fadeToggle(5000);
+		});
+		$("#b6").click(function(){
+			$("#d1").fadeTo("slow",0.1);
+			$("#d2").fadeTo("slow",0.5);
+			$("#d3").fadeTo("slow",0.9);
+		});
+		$("#b7").click(function(){
+			$("#d4").slideDown("slow");
+		});
+		$("#b8").click(function(){
+			$("#d4").slideUp("slow");
+		});
+		$("#b9").click(function(){
+			$("#d5").animate({left:'500px'},'slow');
+		});
+		$("#b10").click(function(){
+			$("#d5").animate({left:'500px',opacity:0.5,height:'150px',width:'150px'},'slow');
+		});
+		$("#b11").click(function(){
+			$("#d5").animate({left:'500px',opacity:0.5,height:'+=150px',width:'+=150px'},'slow');
+		});
+		$("#b12").click(function(){
+			$("#p2").show(function(){
+				alert("小日本出来了");
+			});
+		});
+		$("#b13").click(function(){
+			$("#d6").animate({left:'500px'},'slow');
+		});
+		$("#b14").click(function(){
+			$("#d6").stop();
+		});
+	});
+</script>
+
+
+</head>
+<body>
+<input type="button" id="b1" value="出来"/>
+<input type="button" id="b2" value="滚"/>
+<p id="p1">小日本</p>
+<hr />
+<input type="button" id="b3" value="淡出"/>
+<input type="button" id="b4" value="淡入"/>
+<input type="button" id="b5" value="淡入淡出开关"/>
+<input type="button" id="b6" value="透明度"/>
+<div id="d1" style="width:100px;height:100px;background-color:red;margin:10px;"></div>
+<div id="d2" style="width:100px;height:100px;background-color:green;margin:10px;"></div>
+<div id="d3" style="width:100px;height:100px;background-color:blue;margin:10px;"></div>
+<hr />
+<input type="button" id="b7" value="向下滑动"/>
+<input type="button" id="b8" value="向上滑动"/>
+<div id="d4" style="width:500px;height:100px;background-color:gray;display:none;">
+	<p>java1234</p>
+	<p>hahaha....</p>
+</div>
+<hr />
+<input type="button" id="b9" value="向左移动"/>
+<input type="button" id="b10" value="动画效果"/>
+<input type="button" id="b11" value="动画效果1"/>
+<!-- <div id="d5" style="width:100px;height:100px;background-color:red;margin:10px;position:absolute;"></div> -->
+<hr />
+<input type="button" id="b12" value="回调事件"/>
+<p id="p2" style="display:none;">小日本</p>
+<hr />
+<input type="button" id="b13" value="向左移动"/>
+<input type="button" id="b14" value="暂停动画"/>
+<div id="d6" style="width:100px;height:100px;background-color:red;margin:10px;position:absolute;"></div> 
+<hr />
+</body>
+</html>

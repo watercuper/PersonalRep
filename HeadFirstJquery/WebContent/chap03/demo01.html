@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+/* 		var li2=$("ul li:eq(1)");
+		var li2_txt=li2.text();
+		alert(li2_txt); */
+		
+		/* var a=$("<li title='这是张三'>张三</li>");
+		//var b=$("<li title='这是李四'>李四</li>");
+		//var bb=$("ul li:eq(1)");
+		$("ul").append(a);
+		$("<li title='这是李四'>李四</li>").insertAfter($("ul li:eq(1)")); */
+		
+		/* $("ul li:eq(1)").remove(); */
+		
+		/* var li2=$("ul li:eq(1)");
+		var li2_attr=li2.attr("title");
+		alert(li2_attr);  */
+		
+		/* $("ul li:eq(1)").attr("title","你懂得"); */
+		/* li2=$("ul li:eq(1)").removeAttr("title"); */
+		
+		/* var li2=$("ul li:eq(1)");
+		var li2_class=li2.attr("class");
+		alert(li2_class); */
+		
+		/* $("ul li:eq(1)").attr("class","lc2"); */
+		
+		/* $("ul li:eq(1)").addClass("lc3"); */
+		
+		/* $("ul li:eq(1)").removeClass("lc"); */
+		
+		/* var li1_html=$("ul li:eq(0)").html();
+		alert(li1_html); */
+		
+		/* $("ul li:eq(0)").html("<font color=red>哈哈😆</font>"); */
+	
+		/* var li1_text=$("ul li:eq(0)").text();
+		alert(li1_text);  */
+		
+		/* $("ul li:eq(0)").text("哈哈😆"); */
+		
+		/* var v=$("body").children();
+		alert(v.length);
+		var u=$("ul").children();
+		alert(u.length);
+		for(var i=0;i<u.length;i++){
+			//alert(u[i].innerHTML);
+			alert($(u[i]).html());
+		} */
+		
+		/* var l=$("ul li:eq(1)").next();
+		alert(l.html()); */
+		
+		/* var l=$("ul li:eq(1)").prev();
+		alert(l.html()); */
+		
+		/* var c=$("#jq").css("color");
+		alert(c); */
+		
+		$("#jq").css("color","blue");
+	});
+	
+	function getUserName(){
+		var userName=$("#userName").val();
+		alert(userName);
+	}
+	
+	function setUserName(){
+		$("#userName").val("你懂得");
+	}
+	
+</script>
+
+<style type="text/css">
+	.lc{
+		background-color: red;
+	}
+	
+	.lc2{
+		background-color: blue;
+	}
+	
+	.lc3{
+		font-weight: bold;
+	}
+</style>
+
+</head>
+<body>
+<p>你最喜欢的名人是？</p>
+<ul>
+	<li title="这是乔布斯"><font color="green">乔布斯</font></li>
+	<li title="这是比尔盖茨" class="lc">比尔盖茨</li>
+	<li title="这是詹姆斯高斯林">詹姆斯高斯林</li>
+</ul>
+<input type="text" id="userName"/>
+<input type="button" value="获取数据" onclick="getUserName()"/>
+<input type="button" value="设置数据" onclick="setUserName()"/>
+
+<p id="jq" style="color:red">Jquery测试css样式</p>
+</body>
+</html>
