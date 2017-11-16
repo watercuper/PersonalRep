@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript操作DOM事件</title>
+<script type="text/javascript">
+	function modifyDOM(){
+		document.getElementById("txt").innerHTML="用户名：";
+		document.getElementById("userName").value="jack";
+	}
+	
+	function addDOM(){
+		var para=document.createElement("p");
+		var node=document.createTextNode("...前...");
+		para.appendChild(node);
+		var para2=document.createElement("p");
+		var node2=document.createTextNode("...后...");
+		para2.appendChild(node2);
+		var parent=document.getElementById("parent");
+		var son1=document.getElementById("son1");
+		parent.insertBefore(para,son1);
+		parent.appendChild(para2);
+	}
+	
+	function removeDOM(){
+		var parent=document.getElementById("parent");
+		var son1=document.getElementById("son1");
+		parent.removeChild(son1);
+	}
+</script>
+</head>
+<body>
+<div id="parent">
+	<div id="son1">
+		<font id="txt">:</font><input type="text" id="userName" name="userName"></input>
+	</div>
+</div>
+<input type="button" onclick="modifyDOM()" value="修改DOM节点"></input>
+<input type="button" onclick="addDOM()" value="添加DOM节点"></input>
+<input type="button" onclick="removeDOM()" value="删除DOM节点"></input>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	/*function speak(something){
+		alert(something);
+	}
+	var p=new Object();
+	p.name="jack"
+	p.func=speak;
+	alert(p.name);
+	p.func("hello,大家好");*/
+	
+	/*delete p.name;
+	alert(p.name);
+	
+	delete p.func;
+	p.func("hello,大家好");*/
+	
+	/*p.name=undefined;
+	p.func=undefined;
+	alert(p.name);
+	p.func("hello,大家好");*/
+	
+	function person(name,age){
+		this.name2=name;
+		this.age2=age;
+		function speak(something){
+			alert(something);
+		}
+		this.func=speak;
+	}
+	
+	var p1=new person("jack",12);
+	alert(p1.name2)
+	p1.func("Hello!");
+	
+</script>
+</body>
+</html>
