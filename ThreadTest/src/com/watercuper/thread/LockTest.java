@@ -47,38 +47,40 @@ public class LockTest {
 
 		}).start();
 	}
-}
 
-
-class Outputer{
-	
-	Lock lock=new ReentrantLock();
-	public void output(String name) {
-		int len=name.length();
-		lock.lock();
-		try {
+	static class Outputer{
+		
+		Lock lock=new ReentrantLock();
+		public void output(String name) {
+			int len=name.length();
+			lock.lock();
+			try {
+				for(int i=0;i<len;i++) {
+					System.out.print(name.charAt(i));
+				}
+				System.out.println();
+			} finally {
+				lock.unlock();
+			}		
+		}
+		
+		public synchronized void  output2(String name) {
+			int len=name.length();
 			for(int i=0;i<len;i++) {
 				System.out.print(name.charAt(i));
 			}
 			System.out.println();
-		} finally {
-			lock.unlock();
-		}		
-	}
-	
-	public synchronized void  output2(String name) {
-		int len=name.length();
-		for(int i=0;i<len;i++) {
-			System.out.print(name.charAt(i));
 		}
-		System.out.println();
-	}
-	
-	public static synchronized void output3(String name) {
-		int len=name.length();
-		for(int i=0;i<len;i++) {
-			System.out.print(name.charAt(i));
+		
+		public static synchronized void output3(String name) {
+			int len=name.length();
+			for(int i=0;i<len;i++) {
+				System.out.print(name.charAt(i));
+			}
+			System.out.println();
 		}
-		System.out.println();
 	}
 }
+
+
+
